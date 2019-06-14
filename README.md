@@ -116,8 +116,8 @@ CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi.py \
 
 ## Citing NCBI BERT
 
-*  Peng Y, Yan S, Lu Z. Transfer Learning in Biomedical Natural Language Processing: An
-Evaluation of BERT and ELMo on Ten Benchmarking Datasets. In *Proceedings of the Workshop on Biomedical Natural Language Processing (BioNLP)*. 2019.
+*  Peng Y, Yan S, Lu Z. [Transfer Learning in Biomedical Natural Language Processing: An
+Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474). In *Proceedings of the Workshop on Biomedical Natural Language Processing (BioNLP)*. 2019.
 
 ```
 @InProceedings{peng2019transfer,
