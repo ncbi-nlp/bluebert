@@ -4,7 +4,7 @@ This repository provides codes and models of NCBI BERT, pre-trained on PubMed ab
 
 ## Pre-trained models and benchmark datasets
 
-The pre-trained NCBI BERT weights, vocab, and config files can be downloaded from [](). 
+The pre-trained NCBI BERT weights, vocab, and config files can be downloaded from: 
 
 * [NCBI_BERT-Base, Uncased, PubMed](https://doi.org/10.6084/m9.figshare.8280959): This model was pretrained on PubMed abstracts.
 * [NCBI_BERT-Base, Uncased, PubMed+MIMIC-III](https://doi.org/10.6084/m9.figshare.8280974): This model was pretrained on PubMed abstracts and MIMIC-III.
