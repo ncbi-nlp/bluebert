@@ -4,7 +4,12 @@ This repository provides codes and models of NCBI BERT, pre-trained on PubMed ab
 
 ## Pre-trained models and benchmark datasets
 
-The pre-trained NCBI BERT weights, vocab, and config files can be downloaded from [](). The benchmark datasets can be downloaded from [https://github.com/ncbi-nlp/BLUE_Benchmark](https://github.com/ncbi-nlp/BLUE_Benchmark)
+The pre-trained NCBI BERT weights, vocab, and config files can be downloaded from [](). 
+
+* [NCBI_BERT-Base, Uncased, PubMed](https://doi.org/10.6084/m9.figshare.8280959): This model was pretrained on PubMed abstracts.
+
+
+The benchmark datasets can be downloaded from [https://github.com/ncbi-nlp/BLUE_Benchmark](https://github.com/ncbi-nlp/BLUE_Benchmark)
 
 ## Fine-tuning NCBI BERT
 
