@@ -136,7 +136,7 @@ Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/
 ## Acknowledgments
 
 This work was supported by the Intramural Research Programs of the National Institutes of Health, National Library of
-Medicine and Clinical Center.
+Medicine and Clinical Center. This work was supported by the National Library of Medicine of the National Institutes of Health under award number K99LM013001-01.
 
 We are also grateful to the authors of BERT and ELMo to make the data and codes publicly available.
 
