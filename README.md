@@ -13,7 +13,13 @@ The benchmark datasets can be downloaded from [https://github.com/ncbi-nlp/BLUE_
 
 ## Fine-tuning NCBI BERT
 
-We assume the NCBI BERT model has been downloaded at `$NCBI_BERT_DIR`, and the dataset has been downloaded at `$DATASET_DIR`
+We assume the NCBI BERT model has been downloaded at `$NCBI_BERT_DIR`, and the dataset has been downloaded at `$DATASET_DIR`.
+
+Add local directory to `$PYTHONPATH` if needed.
+
+```bash
+export PYTHONPATH=.;$PYTHONPATH
+```
 
 ### Sentence similarity
 
