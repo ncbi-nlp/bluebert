@@ -6,8 +6,10 @@ This repository provides codes and models of NCBI BERT, pre-trained on PubMed ab
 
 The pre-trained NCBI BERT weights, vocab, and config files can be downloaded from: 
 
-* [NCBI_BERT-Base, Uncased, PubMed](https://doi.org/10.6084/m9.figshare.8280959): This model was pretrained on PubMed abstracts.
-* [NCBI_BERT-Base, Uncased, PubMed+MIMIC-III](https://doi.org/10.6084/m9.figshare.8280974): This model was pretrained on PubMed abstracts and MIMIC-III.
+* [NCBI_BERT-Base, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts.
+* [NCBI_BERT-Base, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
+* [NCBI_BERT-Large, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts.
+* [NCBI_BERT-Large, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
 
 The benchmark datasets can be downloaded from [https://github.com/ncbi-nlp/BLUE_Benchmark](https://github.com/ncbi-nlp/BLUE_Benchmark)
 
