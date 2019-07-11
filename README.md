@@ -133,7 +133,7 @@ CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi.py \
     --do_lower_case=False
 ```
 
-## <a name="pubmed"></a>Preprocessed PubMed text
+## <a name="pubmed"></a>Preprocessed PubMed texts
 
 We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that were used to pre-train the NCBI BERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). Other operations include
 
