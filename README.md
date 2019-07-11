@@ -135,11 +135,11 @@ CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi.py \
 
 ## <a name="pubmed"></a>Preprocessed PubMed text
 
-We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that was used to pre-train the NCBI BERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). To preprocess the corpus, we
+We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that were used to pre-train the NCBI BERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). Other operations include
 
-*  lowercase the text
-*  remove speical chars `\x00`-`\x7F`
-*  tokenize the text using the [NLTK Treebank tokenizer](https://www.nltk.org/_modules/nltk/tokenize/treebank.html)
+*  lowercasing the text
+*  removing speical chars `\x00`-`\x7F`
+*  tokenizing the text using the [NLTK Treebank tokenizer](https://www.nltk.org/_modules/nltk/tokenize/treebank.html)
 
 Below is a code snippet for more details.
 
