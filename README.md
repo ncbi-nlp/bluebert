@@ -1,5 +1,9 @@
 # NCBI BERT
 
+**\*\*\*\*\* New July 11th, 2019: [preprocessed PubMed texts](#pubmed) \*\*\*\*\***
+
+-----
+
 This repository provides codes and models of NCBI BERT, pre-trained on PubMed abstracts and clinical notes ([MIMIC-III](https://mimic.physionet.org/)). Please refer to our paper [Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets]() for more details.
 
 ## Pre-trained models and benchmark datasets
@@ -125,6 +129,26 @@ CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi.py \
     --data_dir=$DATASET_DIR \
     --output_dir=$OUTPUT_DIR \
     --do_lower_case=False
+```
+
+## <a name="pubmed"></a>Preprocessed PubMed text
+
+We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that was used to pre-train the NCBI BERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). To preprocess the corpus, we
+
+*  lowercase the text
+*  remove speical chars `\x00`-`\x7F`
+*  tokenize the text using the [NLTK Treebank tokenizer](https://www.nltk.org/_modules/nltk/tokenize/treebank.html)
+
+Below is a code snippet for more details.
+
+```python
+   value = value.lower()
+   value = re.sub(r'[\r\n]+', ' ', value)
+   value = re.sub(r'[^\x00-\x7F]+', ' ', value)
+
+   tokenized = TreebankWordTokenizer().tokenize(value)
+   sentence = ' '.join(tokenized)
+   sentence = re.sub(r"\s's\b", "'s", sentence)
 ```
 
 ## Citing NCBI BERT
