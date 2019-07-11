@@ -1,8 +1,8 @@
 # NCBI BERT
 
-**\*\*\*\*\* New July 11th, 2019: [preprocessed PubMed texts](#pubmed) \*\*\*\*\***
+**\*\*\*\*\* New July 11th, 2019: preprocessed PubMed texts \*\*\*\*\***
 
-We uploaded the preprocessed PubMed texts that were used to pre-train the NCBI_BERT models.
+We uploaded the [preprocessed PubMed texts](https://github.com/ncbi-nlp/NCBI_BERT/blob/master/README.md#pubmed)  that were used to pre-train the NCBI_BERT models.
 
 -----
 
