@@ -2,6 +2,8 @@
 
 **\*\*\*\*\* New July 11th, 2019: [preprocessed PubMed texts](#pubmed) \*\*\*\*\***
 
+We uploaded the preprocessed PubMed texts that were used to pre-train the NCBI_BERT models.
+
 -----
 
 This repository provides codes and models of NCBI BERT, pre-trained on PubMed abstracts and clinical notes ([MIMIC-III](https://mimic.physionet.org/)). Please refer to our paper [Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets]() for more details.
