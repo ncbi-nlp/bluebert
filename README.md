@@ -174,6 +174,8 @@ Medicine and Clinical Center. This work was supported by the National Library of
 
 We are also grateful to the authors of BERT and ELMo to make the data and codes publicly available.
 
+We would like to thank Dr Sun Kim for processing the PubMed texts.
+
 ## Disclaimer
 
 This tool shows the results of research conducted in the Computational Biology Branch, NCBI. The information produced
