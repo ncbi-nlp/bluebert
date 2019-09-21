@@ -153,6 +153,39 @@ Below is a code snippet for more details.
    sentence = re.sub(r"\s's\b", "'s", sentence)
 ```
 
+Afterwards, we used the following code to prepare the pretraining data.
+
+```bash
+python bert/create_pretraining_data.py \
+  --input_file=pubmed_uncased_sentence_nltk.txt \
+  --output_file=pubmed_uncased_sentence_nltk.tfrecord \
+  --vocab_file=bert_uncased_L-12_H-768_A-12_vocab.txt \
+  --do_lower_case=True \
+  --max_seq_length=128 \
+  --max_predictions_per_seq=20 \
+  --masked_lm_prob=0.15 \
+  --random_seed=12345 \
+  --dupe_factor=5
+```
+
+To train the BERT model, we used
+
+```bash
+python run_pretraining.py \
+  --input_file=pubmed_uncased_sentence_nltk.tfrecord \
+  --output_dir=$NCBI_BERT_DIR \
+  --do_train=True \
+  --do_eval=True \
+  --bert_config_file=bert_config.json \
+  --init_checkpoint= (if needed)
+  --train_batch_size=32 \
+  --max_seq_length=128 \
+  --max_predictions_per_seq=20 \
+  --num_train_steps=20000 \
+  --num_warmup_steps=10 \
+  --learning_rate=2e-5
+```
+
 ## Citing NCBI BERT
 
 *  Peng Y, Yan S, Lu Z. [Transfer Learning in Biomedical Natural Language Processing: An
