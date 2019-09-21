@@ -153,7 +153,9 @@ Below is a code snippet for more details.
    sentence = re.sub(r"\s's\b", "'s", sentence)
 ```
 
-Afterwards, we used the following code to prepare the pretraining data.
+### Pre-training with BERT
+
+Afterwards, we used the following code to generate pre-training data. Please see https://github.com/google-research/bert for more details.
 
 ```bash
 python bert/create_pretraining_data.py \
@@ -168,7 +170,7 @@ python bert/create_pretraining_data.py \
   --dupe_factor=5
 ```
 
-To train the BERT model, we used
+We used the following code to train the BERT model. Please do not include 1init_checkpoint1 if you are pre-training from scratch. Please see https://github.com/google-research/bert for more details.
 
 ```bash
 python run_pretraining.py \
@@ -176,8 +178,8 @@ python run_pretraining.py \
   --output_dir=$NCBI_BERT_DIR \
   --do_train=True \
   --do_eval=True \
-  --bert_config_file=bert_config.json \
-  --init_checkpoint= (if needed)
+  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
+  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
   --train_batch_size=32 \
   --max_seq_length=128 \
   --max_predictions_per_seq=20 \
