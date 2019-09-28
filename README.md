@@ -70,7 +70,6 @@ The task name can be
 
 - `bc5cdr`: BC5CDR chemical or disease task
 - `clefe`: ShARe/CLEFE task
-- `i2b2`: i2b2 2012 task
 
 ### Relation Extraction
 
@@ -93,6 +92,7 @@ The task name can be
 
 - `chemprot`: BC6 ChemProt task
 - `ddi`: DDI 2013 task
+- `i2b2_2010`: I2B2 2010 task
 
 ### Document multilabel classification
 
