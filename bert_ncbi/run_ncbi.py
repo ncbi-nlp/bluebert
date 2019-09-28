@@ -257,6 +257,11 @@ class DDI2013Processor(NCBIProcessor):
         return ["DDI-advise", "DDI-effect", "DDI-int", "DDI-mechanism", 'DDI-false']
 
 
+class I2b2_2010_Processor(NCBIProcessor):
+    def get_labels(self):
+        return ['PIP', 'TeCP', 'TeRP', 'TrAP', 'TrCP', 'TrIP', 'TrNAP', 'TrWP', 'false']
+    
+
 class MedNLIProcessor(DataProcessor):
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -708,6 +713,7 @@ def main(_):
         "chemprot": ChemProtProcessor,
         'ddi': DDI2013Processor,
         'mednli': MedNLIProcessor,
+        'i2b2_2010': I2b2_2010_Processor
     }
 
     tokenization.validate_case_matches_checkpoint(FLAGS.do_lower_case,
