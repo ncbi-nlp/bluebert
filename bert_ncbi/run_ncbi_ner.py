@@ -309,11 +309,6 @@ class CLEFEProcessor(DataProcessor):
             return lines
 
 
-class I2b22012Processor(CLEFEProcessor):
-    def get_labels(self):
-        return ['B-CLINICAL_DEPT', 'B-EVIDENTIAL', 'B-OCCURRENCE', 'B-PROBLEM', 'B-TEST', 'B-TREATMENT', 'I-CLINICAL_DEPT', 'I-EVIDENTIAL', 'I-OCCURRENCE', 'I-PROBLEM', 'I-TEST', 'I-TREATMENT', "O", "X", "[CLS]", "[SEP]"]
-
-
 def write_tokens(tokens, labels, mode):
     if mode == "test":
         path = os.path.join(FLAGS.output_dir, "token_" + mode + ".txt")
@@ -658,7 +653,6 @@ def main(_):
     processors = {
         "bc5cdr": BC5CDRProcessor,
         "clefe": CLEFEProcessor,
-        'i2b2': I2b22012Processor
     }
     # if not FLAGS.do_train and not FLAGS.do_eval:
     #    raise ValueError("At least one of `do_train` or `do_eval` must be True.")
