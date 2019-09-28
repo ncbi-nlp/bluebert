@@ -170,7 +170,7 @@ python bert/create_pretraining_data.py \
   --dupe_factor=5
 ```
 
-We used the following code to train the BERT model. Please do not include 1init_checkpoint1 if you are pre-training from scratch. Please see https://github.com/google-research/bert for more details.
+We used the following code to train the BERT model. Please do not include `init_checkpoint` if you are pre-training from scratch. Please see https://github.com/google-research/bert for more details.
 
 ```bash
 python run_pretraining.py \
