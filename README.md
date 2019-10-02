@@ -1,5 +1,7 @@
 # NCBI BERT
 
+[![HitCount](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT.svg)](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT)
+
 **\*\*\*\*\* New July 11th, 2019: preprocessed PubMed texts \*\*\*\*\***
 
 We uploaded the [preprocessed PubMed texts](https://github.com/ncbi-nlp/NCBI_BERT/blob/master/README.md#pubmed)  that were used to pre-train the NCBI_BERT models.
