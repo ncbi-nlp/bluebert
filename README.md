@@ -201,6 +201,7 @@ Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/
   title     = {Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets},
   booktitle = {Proceedings of the 2019 Workshop on Biomedical Natural Language Processing (BioNLP 2019)},
   year      = {2019},
+  pages     = {58--65},
 }
 ```
 
