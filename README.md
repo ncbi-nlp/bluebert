@@ -34,7 +34,7 @@ export PYTHONPATH=.;$PYTHONPATH
 ### Sentence similarity
 
 ```bash
-CUDA_VISIBLE_DEVICES=2 python bert_ncbi/run_ncbi_sts.py \
+python bert_ncbi/run_ncbi_sts.py \
   --task_name='sts' \
   --do_train=true \
   --do_eval=false \
@@ -53,7 +53,7 @@ CUDA_VISIBLE_DEVICES=2 python bert_ncbi/run_ncbi_sts.py \
 ### Named Entity Recognition
 
 ```bash
-CUDA_VISIBLE_DEVICES=1 python bert_ncbi/run_ncbi_ner.py \
+python bert_ncbi/run_ncbi_ner.py \
   --do_prepare=true \
   --do_train=true \
   --do_eval=true \
@@ -76,18 +76,18 @@ The task name can be
 ### Relation Extraction
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi.py \
-    --do_train=true \
-    --do_eval=false \
-    --do_predict=true \
-    --task_name="chemprot" \
-    --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-    --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-    --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
-    --num_train_epochs=10.0 \
-    --data_dir=$DATASET_DIR \
-    --output_dir=$OUTPUT_DIR \
-    --do_lower_case=False
+python bert_ncbi/run_ncbi.py \
+  --do_train=true \
+  --do_eval=false \
+  --do_predict=true \
+  --task_name="chemprot" \
+  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
+  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
+  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --num_train_epochs=10.0 \
+  --data_dir=$DATASET_DIR \
+  --output_dir=$OUTPUT_DIR \
+  --do_lower_case=False
 ```
 
 The task name can be 
@@ -99,7 +99,7 @@ The task name can be
 ### Document multilabel classification
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi_multi_labels.py \
+python bert_ncbi/run_ncbi_multi_labels.py \
   --task_name="hoc" \
   --do_train=true \
   --do_eval=true \
@@ -121,18 +121,18 @@ CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi_multi_labels.py \
 ### Inference task
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python bert_ncbi/run_ncbi.py \
-    --do_train=true \
-    --do_eval=false \
-    --do_predict=true \
-    --task_name="mednli" \
-    --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-    --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-    --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
-    --num_train_epochs=10.0 \
-    --data_dir=$DATASET_DIR \
-    --output_dir=$OUTPUT_DIR \
-    --do_lower_case=False
+python bert_ncbi/run_ncbi.py \
+  --do_train=true \
+  --do_eval=false \
+  --do_predict=true \
+  --task_name="mednli" \
+  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
+  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
+  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --num_train_epochs=10.0 \
+  --data_dir=$DATASET_DIR \
+  --output_dir=$OUTPUT_DIR \
+  --do_lower_case=False
 ```
 
 ## <a name="pubmed"></a>Preprocessed PubMed texts
@@ -189,6 +189,20 @@ python run_pretraining.py \
   --num_warmup_steps=10 \
   --learning_rate=2e-5
 ```
+
+## FAQ
+
+**Is there any cased version?**
+
+We don't plan to pretrain the cased version. The [BioBERT](https://github.com/naver/biobert-pretrained) has the cased one.
+
+**How did you pre-train the NCBI abstract data?**
+
+We used the BERT initial model, the Google default vocab.txt, and workpiece strategy.
+
+**Google recently released two new BERT models with Whole Word Masking strategy (BERT-Large(Base), Uncased (Whole Word Masking)). Do you have a plan to pre-train new NCBI models based on this new release?**
+   
+We don't plan to train more models recently.
 
 ## Citing NCBI BERT
 
