@@ -192,17 +192,17 @@ python run_pretraining.py \
 
 ## FAQ
 
-**Is there any cased version?**
+*. **Is there any cased version?**
 
-We don't plan to pretrain the cased version. The [BioBERT](https://github.com/naver/biobert-pretrained) has the cased one.
+   We don't plan to pretrain the cased version. The [BioBERT](https://github.com/naver/biobert-pretrained) has the cased one.
 
-**How did you pre-train the NCBI abstract data?**
+*. **How did you pre-train the NCBI abstract data?**
 
-We used the BERT initial model, the Google default vocab.txt, and workpiece strategy.
+   We used the BERT initial model, the Google default vocab.txt, and workpiece strategy.
 
-**Google recently released two new BERT models with Whole Word Masking strategy (BERT-Large(Base), Uncased (Whole Word Masking)). Do you have a plan to pre-train new NCBI models based on this new release?**
+*. **Google recently released two new BERT models with Whole Word Masking strategy (BERT-Large(Base), Uncased (Whole Word Masking)). Do you have a plan to pre-train new NCBI models based on this new release?**
    
-We don't plan to train more models recently.
+   We don't plan to train more models recently.
 
 ## Citing NCBI BERT
 
