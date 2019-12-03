@@ -207,8 +207,8 @@ class DataProcessor(object):
             return lines
 
 
-class NCBIProcessor(DataProcessor):
-    """Processor for the NCBI data set."""
+class BlueBERTProcessor(DataProcessor):
+    """Processor for the BLUE data set."""
 
     def get_train_examples(self, data_dir):
         """See base class."""
@@ -246,18 +246,18 @@ class NCBIProcessor(DataProcessor):
         return examples
 
 
-class ChemProtProcessor(NCBIProcessor):
+class ChemProtProcessor(BlueBERTProcessor):
     def get_labels(self):
         """See base class."""
         return ["CPR:3", "CPR:4", "CPR:5", "CPR:6", "CPR:9", "false"]
 
 
-class DDI2013Processor(NCBIProcessor):
+class DDI2013Processor(BlueBERTProcessor):
     def get_labels(self):
         return ["DDI-advise", "DDI-effect", "DDI-int", "DDI-mechanism", 'DDI-false']
 
 
-class I2b2_2010_Processor(NCBIProcessor):
+class I2b2_2010_Processor(BlueBERTProcessor):
     def get_labels(self):
         return ['PIP', 'TeCP', 'TeRP', 'TrAP', 'TrCP', 'TrIP', 'TrNAP', 'TrWP', 'false']
     

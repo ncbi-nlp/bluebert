@@ -1,29 +1,31 @@
-# NCBI BERT
+# NCBI BlueBERT
 
 [![HitCount](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT.svg)](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT)
 
+**\*\*\*\*\* New Dec 5th, 2019: NCBI_BERT is renamed to NCBI_BlueBERT \*\*\*\*\***
+
 **\*\*\*\*\* New July 11th, 2019: preprocessed PubMed texts \*\*\*\*\***
 
-We uploaded the [preprocessed PubMed texts](https://github.com/ncbi-nlp/NCBI_BERT/blob/master/README.md#pubmed)  that were used to pre-train the NCBI_BERT models.
+We uploaded the [preprocessed PubMed texts](https://github.com/ncbi-nlp/BlueBERT/blob/master/README.md#pubmed)  that were used to pre-train the NCBI BlueBERT models.
 
 -----
 
-This repository provides codes and models of NCBI BERT, pre-trained on PubMed abstracts and clinical notes ([MIMIC-III](https://mimic.physionet.org/)). Please refer to our paper [Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474) for more details.
+This repository provides codes and models of NCBI BlueBERT, pre-trained on PubMed abstracts and clinical notes ([MIMIC-III](https://mimic.physionet.org/)). Please refer to our paper [Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474) for more details.
 
 ## Pre-trained models and benchmark datasets
 
-The pre-trained NCBI BERT weights, vocab, and config files can be downloaded from: 
+The pre-trained NCBI BlueBERT weights, vocab, and config files can be downloaded from: 
 
-* [NCBI_BERT-Base, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts.
-* [NCBI_BERT-Base, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
-* [NCBI_BERT-Large, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts.
-* [NCBI_BERT-Large, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
+* [NCBI_BlueBERT-Base, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/BERT_pubmed_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts.
+* [NCBI_BlueBERT-Base, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
+* [NCBI_BlueBERT-Large, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts.
+* [NCBI_BlueBERT-Large, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
 
 The benchmark datasets can be downloaded from [https://github.com/ncbi-nlp/BLUE_Benchmark](https://github.com/ncbi-nlp/BLUE_Benchmark)
 
-## Fine-tuning NCBI BERT
+## Fine-tuning NCBI BlueBERT
 
-We assume the NCBI BERT model has been downloaded at `$NCBI_BERT_DIR`, and the dataset has been downloaded at `$DATASET_DIR`.
+We assume the BlueBERT model has been downloaded at `$BlueBERT_DIR`, and the dataset has been downloaded at `$DATASET_DIR`.
 
 Add local directory to `$PYTHONPATH` if needed.
 
@@ -34,14 +36,14 @@ export PYTHONPATH=.;$PYTHONPATH
 ### Sentence similarity
 
 ```bash
-python bert_ncbi/run_ncbi_sts.py \
+python bluebert/run_bluebert_sts.py \
   --task_name='sts' \
   --do_train=true \
   --do_eval=false \
   --do_test=true \
-  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --vocab_file=$BlueBERT_DIR/vocab.txt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --max_seq_length=128 \
   --num_train_epochs=30.0 \
   --do_lower_case=true \
@@ -53,15 +55,15 @@ python bert_ncbi/run_ncbi_sts.py \
 ### Named Entity Recognition
 
 ```bash
-python bert_ncbi/run_ncbi_ner.py \
+python bluebert/run_bluebert_ner.py \
   --do_prepare=true \
   --do_train=true \
   --do_eval=true \
   --do_predict=true \
   --task_name="bc5cdr" \
-  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --vocab_file=$BlueBERT_DIR/vocab.txt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --num_train_epochs=30.0 \
   --do_lower_case=False \
   --data_dir=$DATASET_DIR \
@@ -76,14 +78,14 @@ The task name can be
 ### Relation Extraction
 
 ```bash
-python bert_ncbi/run_ncbi.py \
+python bluebert/run_bluebert.py \
   --do_train=true \
   --do_eval=false \
   --do_predict=true \
   --task_name="chemprot" \
-  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --vocab_file=$BlueBERT_DIR/vocab.txt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --num_train_epochs=10.0 \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR \
@@ -99,14 +101,14 @@ The task name can be
 ### Document multilabel classification
 
 ```bash
-python bert_ncbi/run_ncbi_multi_labels.py \
+python bluebert/run_bluebert_multi_labels.py \
   --task_name="hoc" \
   --do_train=true \
   --do_eval=true \
   --do_predict=true \
-  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --vocab_file=$BlueBERT_DIR/vocab.txt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --max_seq_length=128 \
   --train_batch_size=4 \
   --learning_rate=2e-5 \
@@ -121,14 +123,14 @@ python bert_ncbi/run_ncbi_multi_labels.py \
 ### Inference task
 
 ```bash
-python bert_ncbi/run_ncbi.py \
+python bluebert/run_bluebert.py \
   --do_train=true \
   --do_eval=false \
   --do_predict=true \
   --task_name="mednli" \
-  --vocab_file=$NCBI_BERT_DIR/vocab.txt \
-  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --vocab_file=$BlueBERT_DIR/vocab.txt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --num_train_epochs=10.0 \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR \
@@ -137,7 +139,7 @@ python bert_ncbi/run_ncbi.py \
 
 ## <a name="pubmed"></a>Preprocessed PubMed texts
 
-We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that were used to pre-train the NCBI BERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). Other operations include
+We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that were used to pre-train the NCBI BlueBERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). Other operations include
 
 *  lowercasing the text
 *  removing speical chars `\x00`-`\x7F`
@@ -146,13 +148,13 @@ We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl
 Below is a code snippet for more details.
 
 ```python
-   value = value.lower()
-   value = re.sub(r'[\r\n]+', ' ', value)
-   value = re.sub(r'[^\x00-\x7F]+', ' ', value)
+value = value.lower()
+value = re.sub(r'[\r\n]+', ' ', value)
+value = re.sub(r'[^\x00-\x7F]+', ' ', value)
 
-   tokenized = TreebankWordTokenizer().tokenize(value)
-   sentence = ' '.join(tokenized)
-   sentence = re.sub(r"\s's\b", "'s", sentence)
+tokenized = TreebankWordTokenizer().tokenize(value)
+sentence = ' '.join(tokenized)
+sentence = re.sub(r"\s's\b", "'s", sentence)
 ```
 
 ### Pre-training with BERT
@@ -177,11 +179,11 @@ We used the following code to train the BERT model. Please do not include `init_
 ```bash
 python run_pretraining.py \
   --input_file=pubmed_uncased_sentence_nltk.tfrecord \
-  --output_dir=$NCBI_BERT_DIR \
+  --output_dir=$BlueBERT_DIR \
   --do_train=True \
   --do_eval=True \
-  --bert_config_file=$NCBI_BERT_DIR/bert_config.json \
-  --init_checkpoint=$NCBI_BERT_DIR/bert_model.ckpt \
+  --bert_config_file=$BlueBERT_DIR/bert_config.json \
+  --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --train_batch_size=32 \
   --max_seq_length=128 \
   --max_predictions_per_seq=20 \
@@ -190,21 +192,7 @@ python run_pretraining.py \
   --learning_rate=2e-5
 ```
 
-## FAQ
-
-* **Is there any cased version?**
-
-   We don't plan to pretrain the cased version. The [BioBERT](https://github.com/naver/biobert-pretrained) has the cased one.
-
-* **How did you pre-train the NCBI abstract data?**
-
-   We used the BERT initial model, the Google default vocab.txt, and workpiece strategy.
-
-* **Google recently released two new BERT models with Whole Word Masking strategy (BERT-Large(Base), Uncased (Whole Word Masking)). Do you have a plan to pre-train new NCBI models based on this new release?**
-   
-   We don't plan to train more models recently.
-
-## Citing NCBI BERT
+## Citing NCBI BlueBERT
 
 *  Peng Y, Yan S, Lu Z. [Transfer Learning in Biomedical Natural Language Processing: An
 Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474). In *Proceedings of the Workshop on Biomedical Natural Language Processing (BioNLP)*. 2019.

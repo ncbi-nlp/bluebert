@@ -16,11 +16,11 @@ import pickle
 import tensorflow as tf
 
 
-from bert_ncbi.conlleval import evaluate, report_notprint
+from bluebert.conlleval import evaluate, report_notprint
 from bert import modeling
 from bert import optimization
 from bert import tokenization
-from bert_ncbi import tf_metrics
+from bluebert import tf_metrics
 
 flags = tf.flags
 
