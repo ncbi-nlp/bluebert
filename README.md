@@ -1,29 +1,29 @@
-# NCBI BlueBERT
+# BlueBERT
 
 [![HitCount](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT.svg)](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT)
 
-**\*\*\*\*\* New Dec 5th, 2019: NCBI_BERT is renamed to NCBI_BlueBERT \*\*\*\*\***
+**\*\*\*\*\* New Dec 5th, 2019: NCBI_BERT is renamed to BlueBERT \*\*\*\*\***
 
 **\*\*\*\*\* New July 11th, 2019: preprocessed PubMed texts \*\*\*\*\***
 
-We uploaded the [preprocessed PubMed texts](https://github.com/ncbi-nlp/BlueBERT/blob/master/README.md#pubmed)  that were used to pre-train the NCBI BlueBERT models.
+We uploaded the [preprocessed PubMed texts](https://github.com/ncbi-nlp/BlueBERT/blob/master/README.md#pubmed)  that were used to pre-train the BlueBERT models.
 
 -----
 
-This repository provides codes and models of NCBI BlueBERT, pre-trained on PubMed abstracts and clinical notes ([MIMIC-III](https://mimic.physionet.org/)). Please refer to our paper [Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474) for more details.
+This repository provides codes and models of BlueBERT, pre-trained on PubMed abstracts and clinical notes ([MIMIC-III](https://mimic.physionet.org/)). Please refer to our paper [Transfer Learning in Biomedical Natural Language Processing: An Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474) for more details.
 
 ## Pre-trained models and benchmark datasets
 
-The pre-trained NCBI BlueBERT weights, vocab, and config files can be downloaded from: 
+The pre-trained BlueBERT weights, vocab, and config files can be downloaded from: 
 
-* [NCBI_BlueBERT-Base, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts.
-* [NCBI_BlueBERT-Base, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
-* [NCBI_BlueBERT-Large, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts.
-* [NCBI_BlueBERT-Large, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
+* [BlueBERT-Base, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts.
+* [BlueBERT-Base, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-12_H-768_A-12.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
+* [BlueBERT-Large, Uncased, PubMed](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts.
+* [BlueBERT-Large, Uncased, PubMed+MIMIC-III](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/NCBI_BERT_pubmed_mimic_uncased_L-24_H-1024_A-16.zip): This model was pretrained on PubMed abstracts and MIMIC-III.
 
 The benchmark datasets can be downloaded from [https://github.com/ncbi-nlp/BLUE_Benchmark](https://github.com/ncbi-nlp/BLUE_Benchmark)
 
-## Fine-tuning NCBI BlueBERT
+## Fine-tuning BlueBERT
 
 We assume the BlueBERT model has been downloaded at `$BlueBERT_DIR`, and the dataset has been downloaded at `$DATASET_DIR`.
 
@@ -139,7 +139,7 @@ python bluebert/run_bluebert.py \
 
 ## <a name="pubmed"></a>Preprocessed PubMed texts
 
-We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that were used to pre-train the NCBI BlueBERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). Other operations include
+We provide [preprocessed PubMed texts](https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/NCBI-BERT/pubmed_uncased_sentence_nltk.txt.tar.gz) that were used to pre-train the BlueBERT models. The corpus contains ~4000M words extracted from the [PubMed ASCII code version](https://www.ncbi.nlm.nih.gov/research/bionlp/APIs/BioC-PubMed/). Other operations include
 
 *  lowercasing the text
 *  removing speical chars `\x00`-`\x7F`
@@ -192,7 +192,7 @@ python run_pretraining.py \
   --learning_rate=2e-5
 ```
 
-## Citing NCBI BlueBERT
+## Citing BlueBERT
 
 *  Peng Y, Yan S, Lu Z. [Transfer Learning in Biomedical Natural Language Processing: An
 Evaluation of BERT and ELMo on Ten Benchmarking Datasets](https://arxiv.org/abs/1906.05474). In *Proceedings of the Workshop on Biomedical Natural Language Processing (BioNLP)*. 2019.
