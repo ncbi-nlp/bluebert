@@ -1,4 +1,4 @@
-tensorflow==1.12.1
-# tensorflow-gpu==1.12.1
+tensorflow==1.15.2
+# tensorflow-gpu==1.15.2
 google-api-python-client
 oauth2client
