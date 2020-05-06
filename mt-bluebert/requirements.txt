@@ -1,0 +1,21 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+
+numpy
+torch==1.1.0
+tqdm
+colorlog
+boto3
+pytorch-pretrained-bert==v0.6.0
+regex
+scikit-learn
+pyyaml
+pytest
+sentencepiece
+tensorboardX
+tensorboard
+future
+fairseq==0.8.0
+seqeval==0.0.12
+docopt
+pandas
+tabulate

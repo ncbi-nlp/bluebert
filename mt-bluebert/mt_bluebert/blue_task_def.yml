@@ -1,0 +1,121 @@
+clinicalsts:
+  data_format: PremiseAndOneHypothesis
+  encoder_type: BERT
+  enable_san: false
+  metric_meta:
+  - Pearson
+  n_class: 1
+  task_type: Regression
+biosses:
+  data_format: PremiseAndOneHypothesis
+  encoder_type: BERT
+  enable_san: false
+  metric_meta:
+  - Pearson
+  n_class: 1
+  task_type: Regression
+mednli:
+  data_format: PremiseAndOneHypothesis
+  encoder_type: BERT
+  enable_san: true
+  labels:
+    - contradiction
+    - neutral
+    - entailment
+  metric_meta:
+  - MicroF1
+  n_class: 3
+  task_type: Classification
+chemprot:
+  data_format: PremiseOnly
+  encoder_type: BERT
+  enable_san: false
+  labels:
+    - CPR:3
+    - CPR:4
+    - CPR:5
+    - CPR:6
+    - CPR:9
+    - 'false'
+  metric_meta:
+  - MicroF1WithoutLastOne
+  n_class: 6
+  task_type: Classification
+ddi2013-type:
+  data_format: PremiseOnly
+  encoder_type: BERT
+  enable_san: false
+  labels:
+    - DDI-advise
+    - DDI-effect
+    - DDI-int
+    - DDI-mechanism
+    - DDI-false
+  metric_meta:
+  - MacroF1WithoutLastOne
+  - MicroF1WithoutLastOne
+  n_class: 5
+  task_type: Classification
+i2b2-2010-re:
+  data_format: PremiseOnly
+  encoder_type: BERT
+  enable_san: false
+  labels:
+    - PIP
+    - TeCP
+    - TeRP
+    - TrAP
+    - TrCP
+    - TrIP
+    - TrNAP
+    - TrWP
+    - 'false'
+  metric_meta:
+  - MicroF1WithoutLastOne
+  n_class: 9
+  task_type: Classification
+bc5cdr-disease:
+  data_format: Sequence
+  encoder_type: BERT
+  enable_san: False
+  labels:
+  - O
+  - B-Disease
+  - I-Disease
+  - X
+  - CLS
+  - SEP
+  metric_meta:
+  - SeqEval
+  n_class: 6
+  task_type: SequenceLabeling
+bc5cdr-chemical:
+  data_format: Sequence
+  encoder_type: BERT
+  enable_san: False
+  labels:
+  - O
+  - B-Chemical
+  - I-Chemical
+  - X
+  - CLS
+  - SEP
+  metric_meta:
+  - SeqEval
+  n_class: 6
+  task_type: SequenceLabeling
+shareclefe:
+  data_format: Sequence
+  encoder_type: BERT
+  enable_san: False
+  labels:
+  - O
+  - B-Disease
+  - I-Disease
+  - X
+  - CLS
+  - SEP
+  metric_meta:
+  - SeqEval
+  n_class: 6
+  task_type: SequenceLabeling
