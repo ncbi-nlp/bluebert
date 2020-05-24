@@ -89,7 +89,7 @@ python bluebert/run_bluebert.py \
   --num_train_epochs=10.0 \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR \
-  --do_lower_case=False
+  --do_lower_case=true 
 ```
 
 The task name can be 
@@ -134,7 +134,7 @@ python bluebert/run_bluebert.py \
   --num_train_epochs=10.0 \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR \
-  --do_lower_case=False
+  --do_lower_case=true 
 ```
 
 ## <a name="pubmed"></a>Preprocessed PubMed texts
