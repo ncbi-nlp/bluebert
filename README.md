@@ -65,7 +65,7 @@ python bluebert/run_bluebert_ner.py \
   --bert_config_file=$BlueBERT_DIR/bert_config.json \
   --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --num_train_epochs=30.0 \
-  --do_lower_case=False \
+  --do_lower_case=true \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR
 ```
