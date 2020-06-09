@@ -1,4 +1,11 @@
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
 tensorflow==1.15.2
 # tensorflow-gpu==1.15.2
 google-api-python-client
 oauth2client
+tqdm
+numpy
+pandas==0.25.3
+torch===1.4.0
+allennlp
