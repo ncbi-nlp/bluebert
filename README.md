@@ -65,7 +65,7 @@ python bluebert/run_bluebert_ner.py \
   --bert_config_file=$BlueBERT_DIR/bert_config.json \
   --init_checkpoint=$BlueBERT_DIR/bert_model.ckpt \
   --num_train_epochs=30.0 \
-  --do_lower_case=False \
+  --do_lower_case=true \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR
 ```
@@ -89,7 +89,7 @@ python bluebert/run_bluebert.py \
   --num_train_epochs=10.0 \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR \
-  --do_lower_case=False
+  --do_lower_case=true 
 ```
 
 The task name can be 
@@ -134,7 +134,7 @@ python bluebert/run_bluebert.py \
   --num_train_epochs=10.0 \
   --data_dir=$DATASET_DIR \
   --output_dir=$OUTPUT_DIR \
-  --do_lower_case=False
+  --do_lower_case=true 
 ```
 
 ## <a name="pubmed"></a>Preprocessed PubMed texts

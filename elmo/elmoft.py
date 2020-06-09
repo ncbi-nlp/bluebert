@@ -111,7 +111,7 @@ class ELMoClfHead(BaseClfHead):
                 self.seq2seq = None
                 encoder_odim = self.n_embd
             self.maxlen = self.task_params.setdefault('maxlen', 128)
-            self.norm = NORM_TYPE_MAP[norm_type](seqlen)
+            self.norm = NORM_TYPE_MAP[norm_type](self.maxlen)
             self.linear = nn.Sequential(nn.Linear(encoder_odim, fchdim), self._int_actvtn(), nn.Linear(fchdim, fchdim), self._int_actvtn(), nn.Linear(fchdim, num_lbs), self._out_actvtn()) if fchdim else nn.Sequential(nn.Linear(encoder_odim, num_lbs), self._out_actvtn())
         elif seq2vec:
             self.pool = None
@@ -529,6 +529,12 @@ LM_PARAMS = {
 }
 
 
+def gen_pytorch_wrapper(mdl_type, mdl_name, **kwargs):
+    wrapper_cls = PytorchSeq2SeqWrapper if mdl_type == 'seq2seq' else PytorchSeq2VecWrapper
+    mdl_cls = PYTORCH_WRAPPER[mdl_name]
+    return wrapper_cls(module=mdl_cls(**kwargs))
+
+
 def gen_mdl(mdl_name, pretrained=True, use_gpu=False, distrb=False, dev_id=None):
     try:
         params = LM_PARAMS[PARAMS_MAP[mdl_name]]
@@ -671,8 +677,7 @@ def eval(clf, dataset, binlbr, clf_tknids, pad_val=0, task_type='mltc-clf', task
             tkns_tnsr = [batch_to_ids(tkns_tnsr[x]) for x in [0,1]]
             if (use_gpu): tkns_tnsr, lb_tnsr, pool_idx= [tkns_tnsr[x].to('cuda') for x in [0,1]] , lb_tnsr.to('cuda'), [pool_idx[x].to('cuda') for x in [0,1]]
         elif task_type == 'nmt':
-            # tkns_tnsr, lb_tnsr = [s.split(SC) for s in tkns_tnsr if (type(s) is str and s != '') and len(s) > 0], [list(map(int, s.split(SC))) for s in lb_tnsr if (type(s) is str and s != '') and len(s) > 0]
-            tkns_tnsr, lb_tnsr = zip(*[(sx.split(SC), list(map(int, sy.split(SC)))) for sx, sy in zip(tkns_tnsr, lb_tnsr) if ((type(sx) is str and sx != '') or len(sx) > 0) and ((type(sy) is str and sy != '') or len(sy) > 0)])
+            tkns_tnsr, lb_tnsr = [s.split(SC) for s in tkns_tnsr if (type(s) is str and s != '') or len(s) > 0], [list(map(int, s.split(SC))) for s in lb_tnsr if (type(s) is str and s != '') or len(s) > 0]
             if (len(tkns_tnsr) == 0 or len(lb_tnsr) == 0): continue
             tkns_tnsr = [s[:min(len(s), opts.maxlen)] + [''] * (opts.maxlen-len(s)) for s in tkns_tnsr]
             _lb_tnsr = lb_tnsr = torch.LongTensor([s[:min(len(s), opts.maxlen)] + [pad_val] * (opts.maxlen-len(s)) for s in lb_tnsr])
