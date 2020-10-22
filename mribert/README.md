@@ -8,6 +8,51 @@ The pre-trained model weights, vocab, and config files can be downloaded from:
 
 * [mribert](https://github.com/ncbi-nlp/bluebert/releases/tag/lymphnode)
 
+## Fine-tuning BERT
+
+We assume the MriBERT model has been downloaded at `$MriBERT_DIR`.
+
+```bash
+tstr=$(date +"%FT%H%M%S%N")
+text_col="text"
+label_col="label"
+batch_size=32
+train_dataset="train,dev"
+val_dataset="dev"
+test_dataset="test"
+epochs=10
+
+bert_dir=$MriBERT_DIR
+dataset="$MriBERT_DIR/total_data.csv"
+model_dir="MriBERT_DIR/mri_${tstr}"
+test_predictions="predictions_mribert.csv"
+
+# predict new
+pred_dataset="$MriBERT_DIR/new_data.csv"
+pred_predictions="new_data_predictions.csv"
+
+export PYTHONPATH=.;$PYTHONPATH
+python sequence_classification.py \
+  --do_train \
+  --do_test \
+  --dataset "${dataset}" \
+  --output_dir "${model_dir}" \
+  --vocab_file $bert_dir/vocab.txt \
+  --bert_config_file $bert_dir/bert_config.json \
+  --init_checkpoint $bert_dir/mribert_model.ckpt \
+  --text_col "${text_col}" \
+  --label_col "${label_col}" \
+  --batch_size "${batch_size}" \
+  --train_dataset "${train_dataset}" \
+  --val_dataset "${val_dataset}" \
+  --test_dataset "${test_dataset}" \
+  --pred_dataset "${pred_dataset}" \
+  --epochs ${epochs} \
+  --test_predictions ${test_predictions} \
+  --pred_predictions ${pred_predictions}
+```
+
+
 ## Citing MriBert
 
 Peng Y, Lee S, Elton D, Shen T, Tang YX, Chen Q, Wang S, Zhu Y, Summers RM, Lu Z.
