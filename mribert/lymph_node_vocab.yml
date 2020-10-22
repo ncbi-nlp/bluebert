@@ -1,0 +1,199 @@
+Mediastinal lymph node:
+  include:
+    - mediastinum
+    - mediastinal
+Subcarinal lymph node:
+  include:
+    - subcarinal
+    - tracheobronchial
+Cardiophrenic lymph node:
+  include:
+    - cardiophrenic
+    - cardiophrenic angle
+    - pericardiac
+Paraesophageal lymph node:
+  include:
+    - esophageal
+    - esophagus
+    - paraesophageal
+    - 8 thoracic lymph node
+#-------------------------------------------------------------------------------
+Retroperitoneal lymph node:
+  include:
+    - retroperitoneum
+    - retroperitoneal
+    - retro peritoneum
+    - right paraspinal
+    - adrenal gland
+    - adrenal
+    - nephrectomy bed
+    - nephrectomy resection bed
+    - nephrectomy surgical bed
+    - peripelvic
+Retrocrural lymph node:
+  include:
+    - retrocrural
+Para-aortic lymph node:
+  include:
+    - periaortic
+    - peri-aortic
+    - paraaortic
+    - para-aortic
+    - lateral aortic
+    - infrarenal abdominal aorta
+    - left to the aorta
+    - retroaortic
+    - retro-aortic
+Interaortocaval lymph node:
+  include:
+    - aortocaval
+    - interaortocaval
+Retrocaval lymph node:
+  include:
+    - retrocaval
+    - postcaval
+    - posterior to the intrahepatic IVC
+Preaortic lymph node:
+  include:
+    - preaotic
+    - preaortic
+    - anterior to the abdominal aorta
+    - anterior to the aorta
+Paracaval lymph node:
+  include:
+    - paracaval
+    - pericaval
+    - caval
+    - vena cava
+    - cava
+    - paracardial
+    - aJCC level 16
+    - paracardial gastric
+    - lateral to the IVC
+    - margin of the intrahepatic IVC
+Precaval lymph node:  # anterior to the vena cava
+  include:
+    - precaval
+Paraspinal lymph node:
+  include:
+    - paraspinal
+#-------------------------------------------------------------------------------
+Peritoneal lymph node:
+  include:
+    - peritoneal
+    - peritoneum
+Subdiaphragmatic lymph node:
+  include:
+    - diaphragmatic
+    - peri-diaphragmatic
+    - subdiaphragmatic
+Perihepatic lymph node:
+  include:
+    - perihepatic
+Paraduodenal lymph node:
+  include:
+    - paraduodenal
+    - portion of the duodenum
+Hepatic artery lymph node:
+  include:
+    - hepatic artery
+    - hepatic arterial
+Periportal lymph node:
+  include:
+    - liver hilum
+    - hepatoportal
+    - porta hepatis
+    - periportal
+    - portal vein
+Peripancreatic lymph node:
+  include:
+    - pancreatic
+    - pancreas
+    - peripancreatic
+Portocaval lymph node:
+  include:
+    - interportocaval
+    - portocaval
+    - portacaval
+Perigastric lymph node:
+  include:
+    - perigastric
+Splenic lymph node:
+  include:
+    - spleen
+    - splenule
+    - splenic
+Celiac lymph node:
+  include:
+    - celiac
+    - paraceliac
+Superior mesenteric lymph node:
+  include:
+    - SMA
+    - at the level of the SMA
+    - superior mesenteric
+Mesenteric lymph node:
+  include:
+    - mesentery
+    - mesenteric
+    - pelvis mesentery
+Perigastric lymph node along lesser curvature:
+  include:
+    - lesser curve
+    - lesser curvature
+Perigastric lymph node along greater curvature:
+  include:
+    - greater curve
+    - greater curvature
+Gastrosplenic lymph node:
+  include:
+    - Gastrosplenic
+Gastrohepatic ligament lymph node:
+  include:
+    - gastrohepatic
+    - gastrohepatic ligament
+    - gastric
+Hepatoduodenal ligament lymph node:
+  include:
+    - hepatoduodenal
+    - hepatoduodenal ligament
+Paracolic lymph node:
+  include:
+    - paracolic
+Pericecal lymph node:
+  include:
+    - pericecal
+    - adjacent to the cecum
+    - ileocolic
+Periportal/peripancreatic lymph node:
+  include:
+    - periportal/peripancreatic
+#-------------------------------------------------------------------------------
+Pelvic lymph node:
+  include:
+    - pelvic
+    - pelvis
+Common iliac lymph node:
+  include:
+    - common iliac
+    - iliac
+    - ilium
+External iliac lymph node:
+  include:
+    - external iliac
+Psoas lymph node:
+  include:
+    - psoas
+    - psoas muscle
+Presacral lymph node:
+  include:
+    - presacral
+Perivesicular lymph node:
+  include:
+    - Perivesicular
+#-------------------------------------------------------------------------------
+Inguinal lymph node:
+  include:
+    - groin
+    - inguinal
+    - thoracic
