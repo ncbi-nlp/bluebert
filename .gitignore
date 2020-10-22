@@ -1,5 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+.DS_Store
 
 ### Python template
 # Byte-compiled / optimized / DLL files
