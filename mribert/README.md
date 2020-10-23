@@ -62,7 +62,8 @@ In Proceedings of the ClinicalNLP Workshop. 2020.
 ## Acknowledgments
 
 This work was supported by the Intramural Research Programs of the National Institutes of Health, National Library of
-Medicine. This work was supported by the National Library of Medicine of the National Institutes of Health under award number 4R00LM013001.
+Medicine and Clinical Center. 
+This work was supported by the National Library of Medicine of the National Institutes of Health under award number 4R00LM013001.
 
 ## Disclaimer
 
