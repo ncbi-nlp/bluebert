@@ -186,7 +186,7 @@ python bert/create_pretraining_data.py \
 We used the following code to train the BERT model. Please do not include `init_checkpoint` if you are pre-training from scratch. Please see https://github.com/google-research/bert for more details.
 
 ```bash
-python run_pretraining.py \
+python bert/run_pretraining.py \
   --input_file=pubmed_uncased_sentence_nltk.tfrecord \
   --output_dir=$BlueBERT_DIR \
   --do_train=True \
