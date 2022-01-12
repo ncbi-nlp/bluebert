@@ -1,7 +1,5 @@
 # BlueBERT
 
-[![HitCount](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT.svg)](https://hits.dwyl.com/ncbi-nlp/NCBI_BERT)
-
 **\*\*\*\*\* New Nov 1st, 2020: BlueBERT can be found at huggingface \*\*\*\*\***
 
 **\*\*\*\*\* New Dec 5th, 2019: NCBI_BERT is renamed to BlueBERT \*\*\*\*\***
