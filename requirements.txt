@@ -1,7 +1,7 @@
 --find-links https://download.pytorch.org/whl/torch_stable.html
 
-tensorflow==1.15.4
-# tensorflow-gpu==1.15.2
+tensorflow==1.15
+# tensorflow-gpu==1.15
 google-api-python-client
 oauth2client
 tqdm
